@@ -11,7 +11,7 @@
 def get_no_zero_integers(n)
     a = rand(n)
     b = n - a
-    while check(a) or check(b)
+    while check(a) || check(b)
         a = rand(n)
         b = n - a
     end
@@ -22,5 +22,5 @@ def check(n)
     n.to_s.include?("0")
 end
 
-ans = get_no_zero_integers(300000)
+ans = get_no_zero_integers(300_000)
 p ans
