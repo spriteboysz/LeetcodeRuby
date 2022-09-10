@@ -3,7 +3,7 @@
 
 # Author: Deean
 # Date: 2022-09-10 23:07
-# FilePath: P1486.rb
+# FilePath: P1486. 数组异或操作.rb
 # Description: 
 
 # @param {Integer} n
