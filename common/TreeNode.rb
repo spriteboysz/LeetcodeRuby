@@ -62,9 +62,9 @@ class TreeNode
     end
 end
 
-# for test
-data = '[1,2,null,3]'
-root = TreeNode.create(data)
-p root.to_s
+# # for test
+# data = '[1,2,null,3]'
+# root = TreeNode.create(data)
+# p root.to_s
 
 
