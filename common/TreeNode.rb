@@ -4,7 +4,7 @@
 # Author: Deean
 # Date: 2022-09-10 18:35
 # FilePath: TreeNode.rb
-# Description:
+# Description: TreeNode class
 
 # Definition for a binary tree node.
 class TreeNode
@@ -15,7 +15,56 @@ class TreeNode
         @left = left
         @right = right
     end
+
+    def self.create(data)
+        return [] if data.nil?
+
+        values = data[1..data.length - 2].split(',')
+        root = new(values[0].to_i)
+        queue = [root]
+        i = 1
+        until queue.empty?
+            node = queue.shift
+            if values[i] != 'null'
+                node.left = new(values[i].to_i)
+                queue.append(node.left)
+            end
+            i += 1
+            break if values[i].nil?
+
+            if values[i] != 'null'
+                node.right = new(values[i].to_i)
+                queue.append(node.right)
+            end
+            i += 1
+            break if values[i].nil?
+        end
+        root
+    end
+
+    def to_s(root = self)
+        return '' if root.nil?
+
+        queue = [root]
+        values = []
+        until queue.empty?
+            node = queue.shift
+            if node
+                values.append(node.val.to_i)
+                queue.append(node.left)
+                queue.append(node.right)
+            else
+                values.append('null')
+            end
+        end
+        values.pop while values[-1] == 'null'
+        '[' + values.join(',') + ']'
+    end
 end
 
+# for test
+data = '[1,2,null,3]'
+root = TreeNode.create(data)
+p root.to_s
 
 
