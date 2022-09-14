@@ -12,8 +12,7 @@ class TreeNode
 
     def initialize(val = 0, left = nil, right = nil)
         @val = val
-        @left = left
-        @right = right
+        @left, @right = left, right
     end
 
     def self.create(data)
@@ -25,6 +24,8 @@ class TreeNode
         i = 1
         until queue.empty?
             node = queue.shift
+            break if node.nil?
+
             if values[i] != 'null'
                 node.left = new(values[i].to_i)
                 queue.append(node.left)
@@ -43,7 +44,7 @@ class TreeNode
     end
 
     def to_s(root = self)
-        return '' if root.nil?
+        return '[]' if root.nil?
 
         queue = [root]
         values = []
@@ -57,7 +58,7 @@ class TreeNode
                 values.append('null')
             end
         end
-        values.pop while values[-1] == 'null'
+        values.pop while values.last == 'null'
         '[' + values.join(',') + ']'
     end
 end
