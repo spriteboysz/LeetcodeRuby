@@ -40,10 +40,11 @@ class ListNode
     end
 end
 
-# # for test
-# data = '[1,2,4,6,8]'
-# head = ListNode.create(data)
-# p head.to_s
+if __FILE__ == $PROGRAM_NAME
+    data = '[1,2,4,6,8]'
+    head = ListNode.create(data)
+    p head.to_s
+end
 
 
 

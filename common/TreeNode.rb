@@ -63,9 +63,12 @@ class TreeNode
     end
 end
 
-# # for test
-# data = '[1,2,null,3]'
-# root = TreeNode.create(data)
-# p root.to_s
+if __FILE__ == $PROGRAM_NAME
+    # for test
+    data = '[1,2,null,3]'
+    root = TreeNode.create(data)
+    p root.to_s
+end
+
 
 
