@@ -12,11 +12,24 @@ load "common/leetcode.rb"
 # @param {Integer} target
 # @return {Integer[][]}
 def combination_sum(candidates, target)
-    arr = []
-    1.upto((target / candidates.min).to_i).each do |i|
-        arr += candidates.repeated_combination(i).select { |v| v.sum == target }
+    @res = []
+    candidates.sort!
+    backtrace(target, [], candidates, 0)
+    @res
+end
+
+def backtrace(target, path, nums, index)
+    if target == 0
+        @res << path
+        return
     end
-    arr
+    return if target < 0
+
+    nums.each_with_index do |num, i|
+        break if num > target
+        next if i < index
+        backtrace(target - num, path + [num], nums, i)
+    end
 end
 
 if __FILE__ == $PROGRAM_NAME
