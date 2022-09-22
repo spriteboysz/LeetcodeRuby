@@ -3,7 +3,7 @@
 
 # Author: Deean
 # Date: 2022-09-20 23:22
-# FilePath: P0062.rb
+# FilePath: P0062. 不同路径.rb
 # Description:
 
 load "common/leetcode.rb"
