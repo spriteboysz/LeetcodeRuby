@@ -15,9 +15,7 @@ def is_alien_sorted(words, order)
     hash = Hash.new(0)
     order.chars.each_with_index { |c, i| hash[c] = i }
     words.sort_by { |word|
-        num = 0
-        word.each_char { |c| num |= 1 << hash[c] }
-        num
+        word.chars.map { |c| hash[c] }.to_a
     }
 end
 
