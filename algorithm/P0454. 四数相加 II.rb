@@ -23,7 +23,7 @@ def four_sum_count(nums1, nums2, nums3, nums4)
     cnt = 0
     nums3.each do |num3|
         nums4.each do |num4|
-            cnt += hash[-num3 - num4] if hash.include?(-num3 - num4)
+            cnt += hash[-num3 - num4]
         end
     end
     cnt
