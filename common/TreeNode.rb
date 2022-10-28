@@ -18,7 +18,7 @@ class TreeNode
     def self.create(data)
         return [] if data.nil?
 
-        values = data[1..data.length - 2].split(',')
+        values = data[1..data.length - 2].split(",")
         root = new(values[0].to_i)
         queue = [root]
         i = 1
@@ -26,14 +26,14 @@ class TreeNode
             node = queue.shift
             break if node.nil?
 
-            if values[i] != 'null'
+            if values[i] != "null"
                 node.left = new(values[i].to_i)
                 queue.append(node.left)
             end
             i += 1
             break if values[i].nil?
 
-            if values[i] != 'null'
+            if values[i] != "null"
                 node.right = new(values[i].to_i)
                 queue.append(node.right)
             end
@@ -44,7 +44,7 @@ class TreeNode
     end
 
     def to_s(root = self)
-        return '[]' if root.nil?
+        return "[]" if root.nil?
 
         queue = [root]
         values = []
@@ -55,17 +55,17 @@ class TreeNode
                 queue.append(node.left)
                 queue.append(node.right)
             else
-                values.append('null')
+                values.append("null")
             end
         end
-        values.pop while values.last == 'null'
-        '[' + values.join(',') + ']'
+        values.pop while values.last == "null"
+        "[" + values.join(",") + "]"
     end
 end
 
 if __FILE__ == $PROGRAM_NAME
     # for test
-    data = '[1,2,null,3]'
+    data = "[1,2,null,3]"
     root = TreeNode.create(data)
     p root.to_s
 end
