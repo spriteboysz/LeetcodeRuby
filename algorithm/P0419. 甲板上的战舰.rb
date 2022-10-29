@@ -13,12 +13,12 @@ load "common/leetcode.rb"
 def count_battleships(board)
     cnt = 0
     board.each_with_index do |row, i|
-        row.each_with_index { |position, j|
+        row.each_with_index do |position, j|
             next if position == "."
             next if i > 0 && board[i - 1][j] == "X"
             next if j > 0 && board[i][j - 1] == "X"
             cnt += 1
-        }
+        end
     end
     cnt
 end
