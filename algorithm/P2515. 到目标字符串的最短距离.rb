@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # !/usr/bin/ruby -w
 # coding=utf-8
 
