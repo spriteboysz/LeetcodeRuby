@@ -11,7 +11,8 @@ load "common/leetcode.rb"
 # @param {Integer} n
 # @return {Integer}
 def number_of_cuts(n)
-    n > 1 && n % 2 == 0 ? n / 2 : n
+    return 0 if n == 1
+    n % 2 == 0 ? n / 2 : n
 end
 
 if __FILE__ == $PROGRAM_NAME
