@@ -11,13 +11,15 @@ load "common/leetcode.rb"
 # @param {Integer[]} nums
 # @return {Integer}
 def remove_duplicates(nums)
-    (1...nums.length).each do |i|
-        nums[i - 1] = nil if nums[i - 1] == nums[i]
+    return nums.length if nums.length < 2
+    (nums.length-1).downto(0) do |index|
+        nums.delete_at(index) if nums.index(nums[index]) != index
     end
-    nums.compact!
+    nums.length
 end
 
 if __FILE__ == $PROGRAM_NAME
     nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
     p remove_duplicates(nums)
+    p remove_duplicates([1])
 end

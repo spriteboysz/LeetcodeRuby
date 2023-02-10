@@ -3,7 +3,7 @@
 
 # Author: Deean
 # Date: 2023-02-09 21:35
-# FilePath: 1037. 有效的回旋镖.rb
+# FilePath: P1037. 有效的回旋镖.rb
 # Description:
 
 load "common/leetcode.rb"
