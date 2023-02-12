@@ -14,13 +14,13 @@ def get_row(row_index)
     triangle = []
     (1..row_index + 1).each do |i|
         row = []
-        (0...i).each { |j|
+        (0...i).each do |j|
             if j == i - 1 or j == 0
                 row << 1
             else
                 row << triangle[i - 2][j - 1] + triangle[i - 2][j]
             end
-        }
+        end
         triangle << row
     end
     triangle[-1]
