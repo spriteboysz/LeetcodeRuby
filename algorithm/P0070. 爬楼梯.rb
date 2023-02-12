@@ -8,8 +8,20 @@
 
 load "common/leetcode.rb"
 
-if __FILE__ == $PROGRAM_NAME
+# @param {Integer} n
+# @return {Integer}
+def climb_stairs(n)
+    a, b, c = 1, 2, 3
+    return n if n == 1 || n == 2
+    (n - 2).times do
+        c = a + b
+        a, b = b, c
+    end
+    c
+end
 
+if __FILE__ == $PROGRAM_NAME
+    p climb_stairs(3)
 end
 
 
