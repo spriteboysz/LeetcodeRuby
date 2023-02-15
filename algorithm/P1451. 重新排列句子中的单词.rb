@@ -12,7 +12,8 @@ load "common/leetcode.rb"
 # @return {String}
 def arrange_words(text)
     words = text.downcase.split
-    words.sort_by { |word| [word.length, words.index(word)] }
+    words.sort_by! { |word| word.length }
+    words.join(" ").capitalize
 end
 
 if __FILE__ == $PROGRAM_NAME
