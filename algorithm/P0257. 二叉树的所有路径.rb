@@ -11,16 +11,16 @@ load "common/leetcode.rb"
 # @param {TreeNode} root
 # @return {String[]}
 def binary_tree_paths(root)
-    @paths = []
+    @path = []
     dfs(root, "")
-    @paths
+    @path
 end
 
 def dfs(root, path)
     return if root.nil?
     path += root.val.to_s
     if root.left.nil? && root.right.nil?
-        @paths << path
+        @path << path
     else
         path += "->"
         dfs(root.left, path)

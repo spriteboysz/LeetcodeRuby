@@ -27,7 +27,7 @@ end
 # @return {string}
 def decode(short_url)
     uri = URI(short_url)
-    Base64.urlsafe_decode64 uri.path[1..]
+    Base64.urlsafe_decode64 uri.res[1..]
 end
 
 if __FILE__ == $PROGRAM_NAME
