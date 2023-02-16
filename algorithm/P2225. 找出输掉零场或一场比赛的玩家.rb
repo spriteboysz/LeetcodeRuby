@@ -21,5 +21,8 @@ def find_winners(matches)
 end
 
 if __FILE__ == $PROGRAM_NAME
-    p find_winners([[2, 3], [1, 3], [5, 4], [6, 4]])
+    p find_winners([[2, 3],
+                    [1, 3],
+                    [5, 4],
+                    [6, 4]])
 end
