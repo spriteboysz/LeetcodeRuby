@@ -3,7 +3,7 @@
 
 # Author: Deean
 # Date: 2022-10-09 22:37
-# FilePath: P02225. 找出输掉零场或一场比赛的玩家.rb
+# FilePath: P2225. 找出输掉零场或一场比赛的玩家.rb
 # Description:
 
 load "common/leetcode.rb"

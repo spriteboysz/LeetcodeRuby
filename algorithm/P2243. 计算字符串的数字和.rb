@@ -12,9 +12,14 @@ load "common/leetcode.rb"
 # @param {Integer} k
 # @return {String}
 def digit_sum(s, k)
-    while s.length != k
-        p s.split
+    while s.length > k
+        t = ""
+        (0...s.length).step(k).each do |i|
+            t << s[i, k].chars.map(&:to_i).sum.to_s
+        end
+        s = t
     end
+    s
 end
 
 if __FILE__ == $PROGRAM_NAME
