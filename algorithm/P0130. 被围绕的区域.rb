@@ -3,7 +3,7 @@
 
 # Author: Deean
 # Date: 2023-02-19 22:42
-# FilePath: P130. 被围绕的区域.rb
+# FilePath: P0130. 被围绕的区域.rb
 # Description:
 
 load "common/leetcode.rb"
