@@ -9,21 +9,21 @@
 load "common/leetcode.rb"
 
 # @param {Node} head
-# @param {Integer} insertVal
+# @param {Integer} insert_val
 # @return {Node}
-def insert(head, insertVal)
+def insert(head, insert_val)
     if head.nil?
-        head = ListNode.new(insertVal)
+        head = ListNode.new(insert_val)
         head.next = head
         return head
     end
     p = head
-    until insertVal.between?(p.val, p.next.val)
+    until insert_val.between?(p.val, p.next.val)
         p = p.next
         break if p == head
-        break if p.val > p.next.val && (insertVal >= p.val || insertVal <= p.next.val )
+        break if p.val > p.next.val && (insert_val >= p.val || insert_val <= p.next.val )
     end
-    p.next = ListNode.new(insertVal, p.next)
+    p.next = ListNode.new(insert_val, p.next)
     head
 end
 
