@@ -17,7 +17,7 @@ def k_items_with_maximum_sum(num_ones, num_zeros, num_neg_ones, k)
     k -= num_ones
     return num_ones if k <= num_zeros
     k -= num_zeros
-    num_ones - k if num_neg_ones > k
+    num_ones - k if num_neg_ones >= k
 end
 
 if __FILE__ == $PROGRAM_NAME
