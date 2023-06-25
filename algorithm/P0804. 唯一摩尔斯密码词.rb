@@ -20,7 +20,7 @@ def unique_morse_representations(words)
     encoded.uniq.length
 end
 
-p unique_morse_representations(words = ["gin", "zen", "gig", "msg"])
+p unique_morse_representations(words = %w[gin zen gig msg])
 
 
 

@@ -11,7 +11,7 @@ load "common/leetcode.rb"
 require "base64"
 require "uri"
 
-HOST = "http://tinyurl.com/"
+HOST = "https://tinyurl.com/"
 
 # Encodes a URL to a shortened URL.
 #

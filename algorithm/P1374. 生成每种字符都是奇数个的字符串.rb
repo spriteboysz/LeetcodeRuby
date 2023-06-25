@@ -11,7 +11,7 @@
 def generate_the_string(n)
     ss = "a" * (n - 1)
     ss += n % 2 == 0 ? "b" : "a"
-    return ss
+    ss
 end
 
 p generate_the_string(4)

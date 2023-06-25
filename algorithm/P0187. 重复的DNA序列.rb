@@ -20,7 +20,7 @@ def find_repeated_dna_sequences(s)
         cur += s[i + 10].to_s
         hash[cur] += 1
     end
-    hash.select { |k, v| v > 1 }.keys
+    hash.select { |_, v| v > 1 }.keys
 end
 
 if __FILE__ == $PROGRAM_NAME

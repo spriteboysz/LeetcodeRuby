@@ -15,7 +15,7 @@ def level_order(root)
     until queue.empty?
         return [] if root.nil?
         level, size = [], queue.length
-        (0...size).each do |i|
+        (0...size).each do |_|
             node = queue.shift
             next if node.nil?
             level << node.val

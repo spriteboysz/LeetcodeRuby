@@ -19,7 +19,7 @@ def find_words(words)
 end
 
 p find_words(words = ["omk"])
-p find_words(words = ["adsdf", "sfd"])
+p find_words(words = %w[adsdf sfd])
 
 
 

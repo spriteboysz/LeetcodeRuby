@@ -24,7 +24,7 @@ def count_battleships(board)
 end
 
 if __FILE__ == $PROGRAM_NAME
-    p count_battleships([["X", ".", ".", "X"],
-                         [".", ".", ".", "X"],
-                         [".", ".", ".", "X"]])
+    p count_battleships([%w[X . . X],
+                         %w[. . . X],
+                         %w[. . . X]])
 end

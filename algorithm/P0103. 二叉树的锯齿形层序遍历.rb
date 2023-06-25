@@ -15,7 +15,7 @@ def zigzag_level_order(root)
     levels, queue = [], [root]
     until queue.empty?
         level, size = [], queue.length
-        (0...size).each do |i|
+        (0...size).each do |_|
             node = queue.shift
             next if node.nil?
             level << node.val

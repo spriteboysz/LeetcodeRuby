@@ -25,7 +25,7 @@ def max_count(banned, n, max_sum)
 end
 
 if __FILE__ == $PROGRAM_NAME
-    p max_count(banned = [11], n = 7, maxSum = 50)
+    p max_count(banned = [11], n = 7, max_sum = 50)
 end
 
 

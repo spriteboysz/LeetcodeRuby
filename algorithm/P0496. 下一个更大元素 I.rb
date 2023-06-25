@@ -15,7 +15,7 @@ def next_greater_element(nums1, nums2)
     greater = []
     nums1.each do |num|
         flag = false
-        nums2.each_with_index { |n, i|
+        nums2.each_with_index { |n, _|
             flag = true if n == num
             if flag && n > num
                 greater << n

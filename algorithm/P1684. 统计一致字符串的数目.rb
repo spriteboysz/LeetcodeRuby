@@ -25,7 +25,7 @@ def count_consistent_strings(allowed, words)
     cnt
 end
 
-p count_consistent_strings(allowed = "cad", words = ["cc", "acd", "b", "ba", "bac", "bad", "ac", "d"])
+p count_consistent_strings(allowed = "cad", words = %w[cc acd b ba bac bad ac d])
 
 
 

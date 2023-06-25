@@ -12,8 +12,8 @@ load "common/leetcode.rb"
 # @param {Integer} target
 # @return {Boolean}
 def search_matrix(matrix, target)
-    matrix.each_with_index do |row, i|
-        row.each_with_index do |v, j|
+    matrix.each_with_index do |row, _|
+        row.each_with_index do |v, _|
             return true if v == target
         end
     end
