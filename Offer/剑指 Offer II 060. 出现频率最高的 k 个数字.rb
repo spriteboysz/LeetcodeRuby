@@ -14,7 +14,7 @@ load "common/leetcode.rb"
 def top_k_frequent(nums, k)
     hash = Hash.new(0)
     nums.each { |num| hash[num] += 1 }
-    hash.keys.sort_by { |k| hash[k] }.reverse[0...k]
+    hash.keys.sort_by { |elem| hash[elem] }.reverse[0...k]
 end
 
 if __FILE__ == $PROGRAM_NAME

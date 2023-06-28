@@ -8,17 +8,17 @@
 
 load "common/leetcode.rb"
 
-# @param {ListNode} headA
-# @param {ListNode} headB
+# @param {ListNode} head1
+# @param {ListNode} head2
 # @return {ListNode}
-def getIntersectionNode(headA, headB)
+def getIntersectionNode(head1, head2)
     hash = Hash.new(0)
-    cur = headA
+    cur = head1
     while cur
         hash[cur] = 1
         cur = cur.next
     end
-    cur = headB
+    cur = head2
     while cur
         if hash[cur] == 1
             return cur

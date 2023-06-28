@@ -19,7 +19,7 @@ def common_chars(words)
     }
     ss = ""
     alphabets.transpose.map(&:min).each_with_index { |num, i|
-        ss += (i + 97).chr * num
+        ss += (i + 97).chr * num[0]
     }
     ss.chars
 end

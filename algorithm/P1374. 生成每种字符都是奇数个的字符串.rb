@@ -10,7 +10,7 @@
 # @return {String}
 def generate_the_string(n)
     ss = "a" * (n - 1)
-    ss += n % 2 == 0 ? "b" : "a"
+    ss = ss + (n % 2 == 0 ? "b" : "a")
     ss
 end
 
