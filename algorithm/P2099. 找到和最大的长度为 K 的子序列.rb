@@ -12,7 +12,16 @@ load "common/leetcode.rb"
 # @param {Integer} k
 # @return {Integer[]}
 def max_subsequence(nums, k)
-
+    hash = Hash.new([])
+    nums.each_with_index { |num, i|
+        hash[num] = Array.new(hash[num]) << i
+    }
+    subsequence = Array.new(nums.size).fill(nil)
+    nums.sort.reverse[...k].each { |num|
+        subsequence[hash[num].first] = num
+        hash[num].shift
+    }
+    subsequence.compact
 end
 
 if __FILE__ == $PROGRAM_NAME
