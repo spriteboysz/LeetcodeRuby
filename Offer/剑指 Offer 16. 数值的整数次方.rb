@@ -12,15 +12,12 @@ load "common/leetcode.rb"
 # @param {Integer} n
 # @return {Float}
 def my_pow(x, n)
-    return 0 if n == 0
-    ans = 1
-    x, n = 1.0 / x, -n if n < 0
-    while n > 0
-        ans *= x unless n & 1 == 0
-        x *= x
-        n >>= 1
+    def fast_pow(x, n, sign, &op)
+        return 1.0 if n == 0
+        n % 2 == 0 ? fast_pow(x, n / 2, sign, &op) ** 2 : op[fast_pow(x, n - sign, sign, &op), x]
     end
-    ans
+
+    n > 0 ? fast_pow(x, n, 1, &:*) : fast_pow(x, n, -1, &:/)
 end
 
 if __FILE__ == $PROGRAM_NAME

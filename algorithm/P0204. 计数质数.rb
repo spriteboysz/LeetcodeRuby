@@ -11,32 +11,21 @@ load "common/leetcode.rb"
 # @param {Integer} n
 # @return {Integer}
 def count_primes(n)
-    return 1229 if n == 10000
-    return 41537 if n == 499979
-    return 78497 if n == 999983
-    return 114155 if n == 1500000
-    if n < 3
-        return 0
-    elsif n == 3
-        return 1
-    elsif n == 4
-        return 2
-    end
-    result = n - 3
-    (5...n).each do |i|
-        (2..i).each { |j|
-            break if j * j > i
-            if i % j == 0
-                result -= 1
-                break
-            end
-        }
-    end
-    result
+    return 0 if n < 2
+    is_prime = [1] * n
+    is_prime[0], is_prime[1] = 0, 0
+    (2...(n ** 0.5 + 1).to_i).each { |i|
+        if is_prime[i] == 1
+            (i * i).step(n, i).each { |j|
+                is_prime[j] = 0
+            }
+        end
+    }
+    is_prime.sum
 end
 
 if __FILE__ == $PROGRAM_NAME
-    p count_primes(10)
+    p count_primes(689171)
 end
 
 
