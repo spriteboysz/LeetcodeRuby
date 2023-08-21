@@ -16,17 +16,17 @@ def double_it(head)
         nums << head.val
         head = head.next
     end
-    carry, i, ret = 0, nums.size - 1, []
+    carry, i, nums2 = 0, nums.size - 1, []
     while i >= 0 || carry != 0
         carry += nums[i] * 2 if i >= 0
-        ret.unshift(carry % 10)
+        nums2.unshift(carry % 10)
         carry /= 10
         i -= 1
     end
 
     dummy = ListNode.new(-1)
     cur = dummy
-    ret.each { |num|
+    nums2.each { |num|
         cur.next = ListNode.new(num)
         cur = cur.next
     }
