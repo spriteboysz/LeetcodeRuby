@@ -11,10 +11,18 @@ load "common/leetcode.rb"
 # @param {String} word2
 # @return {Integer}
 def min_distance(word1, word2)
-    alphabet = Array.new(26, 0)
-    word1.each_char { |c| alphabet[c.ord - "a".ord] += 1 }
-    word2.each_char { |c| alphabet[c.ord - "a".ord] -= 1 }
-    alphabet.map(&:abs).sum
+    m, n = word1.size, word2.size
+    dp = Array.new(m + 1) { |_| Array.new(n + 1).fill(0) }
+    (0...m).each { |i|
+        (0...n).each { |j|
+            if word1[i] == word2[j]
+                dp[i + 1][j + 1] = dp[i][j] + 1
+            else
+                dp[i + 1][j + 1] = [dp[i][j + 1], dp[i + 1][j]].max
+            end
+        }
+    }
+    m + n - dp[m][n] * 2
 end
 
 if __FILE__ == $PROGRAM_NAME
