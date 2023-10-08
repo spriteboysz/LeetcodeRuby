@@ -12,17 +12,17 @@ load "common/leetcode.rb"
 # @param {String} word
 # @return {Boolean}
 def exist(board, word)
-    @board, @word = board, word
+    @grid, @target = board, word
 
     def dfs(i, j, k)
-        m, n = @board.size, @board[0].size
-        if i < 0 or i >= m or j < 0 or j >= n or @board[i][j] != @word[k]
+        m, n = @grid.size, @grid[0].size
+        if i < 0 or i >= m or j < 0 or j >= n or @grid[i][j] != @target[k]
             return false
         end
-        return true if k == @word.size - 1
-        @board[i][j] = ""
+        return true if k == @target.size - 1
+        @grid[i][j] = ""
         res = dfs(i + 1, j, k + 1) || dfs(i - 1, j, k + 1) || dfs(i, j + 1, k + 1) || dfs(i, j - 1, k + 1)
-        @board[i][j] = @word[k]
+        @grid[i][j] = @target[k]
         res
     end
 

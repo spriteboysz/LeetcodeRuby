@@ -20,6 +20,6 @@ def is_alien_sorted(words, order)
 end
 
 if __FILE__ == $PROGRAM_NAME
-    p is_alien_sorted(words = %w[word world row], order = "worldabcefghijkmnpqstuvxyz")
+    p is_alien_sorted(words = %w[target world row], order = "worldabcefghijkmnpqstuvxyz")
     p is_alien_sorted(%w[ubg kwh], "qcipyamwvdjtesbghlorufnkzx")
 end

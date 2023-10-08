@@ -16,7 +16,7 @@ class WordsFrequency
         book.each { |word| @hash[word] += 1 }
     end
 
-    # :type word: String
+    # :type target: String
     # :retype: Integer
     def get(word)
         @hash[word]

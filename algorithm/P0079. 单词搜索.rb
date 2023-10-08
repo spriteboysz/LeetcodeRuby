@@ -9,21 +9,21 @@
 load "common/leetcode.rb"
 
 # @param {Character[][]} board
-# @param {String} word
+# @param {String} target
 # @return {Boolean}
 @directions = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 
 def exist(board, word)
-    @board, @word = board, word
+    @grid, @target = board, word
 
     def dfs(i, j, k)
-        if i < 0 || j < 0 || i >= @board.length || j >= @board[0].length || @board[i][j] != @word[k]
+        if i < 0 || j < 0 || i >= @grid.length || j >= @grid[0].length || @grid[i][j] != @target[k]
             return false
         end
-        return true if k == @word.length - 1
-        @board[i][j] = ""
+        return true if k == @target.length - 1
+        @grid[i][j] = ""
         res = dfs(i + 1, j, k + 1) || dfs(i - 1, j, k + 1) || dfs(i, j + 1, k + 1) || dfs(i, j - 1, k + 1)
-        @board[i][j] = @word[k]
+        @grid[i][j] = @target[k]
         res
     end
 
